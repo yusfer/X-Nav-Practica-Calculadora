@@ -14,8 +14,12 @@ jQuery(document).ready(function() {
 				case ("C"):
 					$("#display").text("");
 					break;
-				case ("-"):
-					$("#display").text("-"+$("#display").text());
+				case ("+/-"):
+					if($("#display").text()[0]=="-"){
+						$("#display").text($("#display").text().substr(1));	//eliminamos primer caracter
+					}else{
+						$("#display").text("-"+$("#display").text());
+					}
 					break;
 				case ("="):
 					$("#display").text(eval($("#display").text()));
